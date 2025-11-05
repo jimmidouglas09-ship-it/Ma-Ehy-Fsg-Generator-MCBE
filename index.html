@@ -282,6 +282,9 @@
         0 4px 8px rgba(0,0,0,0.3);
       position: relative;
       image-rendering: pixelated;
+      max-width: 700px;  
+      margin-left: auto; 
+      margin-right: auto; 
     }
 
     .filter-options {
@@ -594,7 +597,7 @@
 <body>
 
   
-  <!-- Main Filter Selection Page -->
+ <!-- Main Filter Selection Page -->
 
 
   <div id="filterPage" class="page active">
@@ -603,8 +606,8 @@
     <div class="filter-box">
       Choose a Filter
       <div class="filter-options">
-        <button class="blocky-btn filter-btn blue-btn" onclick="goToPage('packlessStrongholdPage')">Packless Stronghold Village</button>
         <button class="blocky-btn filter-btn" onclick="goToPage('strongholdPage')">Stronghold Village</button>
+        <button class="blocky-btn filter-btn blue-btn" onclick="goToPage('packlessStrongholdPage')">Packless Stronghold Village</button>
         <button class="blocky-btn filter-btn red-btn" onclick="goToPage('ruinedPortalPage')">Ruined Portal</button>
         <button class="blocky-btn filter-btn gold-btn" onclick="goToPage('classicPage')">Classic</button>
       </div>
