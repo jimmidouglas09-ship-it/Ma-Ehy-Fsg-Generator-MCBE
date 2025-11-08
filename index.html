@@ -73,12 +73,12 @@
         var(--minecraft-dark-orange) 100%);
     }
 
-    body.light-blue-theme {
-      background: linear-gradient(135deg, 
-        #81D4FA 0%, 
-        #4FC3F7 50%, 
-        #29B6F6 100%);
-    }
+    body.purple-theme {
+  background: linear-gradient(135deg, 
+    #9C27B0 0%, 
+    #BA68C8 50%, 
+    #7B1FA2 100%);
+}
     
     body::before {
       content: '';
@@ -295,23 +295,22 @@
       background: var(--minecraft-dark-orange);
     }
 
-    .light-blue-btn {
-      background: linear-gradient(45deg, 
-        #4FC3F7, 
-        #0288D1);
-      border-color: #0288D1;
-    }
+    .purple-btn {
+  background: linear-gradient(45deg, 
+    #9C27B0, 
+    #7B1FA2);
+  border-color: #7B1FA2;
+}
 
-    .light-blue-btn:hover:not([disabled]) {
-      background: linear-gradient(45deg, 
-        #0288D1, 
-        #4FC3F7);
-    }
+.purple-btn:hover:not([disabled]) {
+  background: linear-gradient(45deg, 
+    #7B1FA2, 
+    #9C27B0);
+}
 
-    .light-blue-btn:active:not([disabled]) {
-      background: #0288D1;
-    }
-
+.purple-btn:active:not([disabled]) {
+  background: #7B1FA2;
+}
     .filter-box {
       background: var(--minecraft-black);
       border: 6px solid var(--minecraft-dark-gray);
@@ -677,7 +676,7 @@
         <button class="blocky-btn filter-btn blue-btn" onclick="goToPage('packlessStrongholdPage')">Packless Stronghold Village</button>
         <button class="blocky-btn filter-btn orange-btn" onclick="goToPage('villagePage')">Village</button>
         <button class="blocky-btn filter-btn gold-btn" onclick="goToPage('classicPage')">Classic</button>
-        <button class="blocky-btn filter-btn light-blue-btn" onclick="goToPage('structurelessPage')">Structureless</button>
+        <button class="blocky-btn filter-btn purple-btn" onclick="goToPage('structurelessPage')">Structureless</button>
       </div>
     </div>
   </div>
@@ -892,7 +891,7 @@ Structureless: seeds optimized for structureless runs. <br>
       document.body.classList.add('gold-theme');
     } else if (pageId === 'structurelessPage') {
       document.body.classList.remove('blue-theme', 'red-theme', 'orange-theme', 'gold-theme');
-      document.body.classList.add('light-blue-theme');
+      document.body.classList.add('purple-theme');
     } else {
       document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'orange-theme', 'light-blue-theme');
     }
