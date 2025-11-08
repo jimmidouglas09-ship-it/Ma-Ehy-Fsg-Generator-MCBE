@@ -72,7 +72,14 @@
         #FFB74D 50%, 
         var(--minecraft-dark-orange) 100%);
     }
-    
+
+    body.purple-theme {
+  background: linear-gradient(135deg, 
+    #9C27B0 0%, 
+    #BA68C8 50%, 
+    #7B1FA2 100%);
+}
+  
     body::before {
       content: '';
       position: fixed;
@@ -288,6 +295,22 @@
       background: var(--minecraft-dark-orange);
     }
 
+    .purple-btn {
+  background: linear-gradient(45deg, 
+    #9C27B0, 
+    #7B1FA2);
+  border-color: #7B1FA2;
+}
+
+.purple-btn:hover:not([disabled]) {
+  background: linear-gradient(45deg, 
+    #7B1FA2, 
+    #9C27B0);
+}
+
+.purple-btn:active:not([disabled]) {
+  background: #7B1FA2;
+}
     .filter-box {
       background: var(--minecraft-black);
       border: 6px solid var(--minecraft-dark-gray);
@@ -633,14 +656,28 @@
       Choose a Filter
       <div class="filter-options">
         <button class="blocky-btn filter-btn" onclick="goToPage('strongholdPage')">Stronghold Village</button>
-        <button class="blocky-btn filter-btn blue-btn" onclick="goToPage('packlessStrongholdPage')">Packless Stronghold Village</button>
         <button class="blocky-btn filter-btn red-btn" onclick="goToPage('ruinedPortalPage')">Ruined Portal</button>
-        <button class="blocky-btn filter-btn orange-btn" onclick="goToPage('villagePage')">Village</button>
-        <button class="blocky-btn filter-btn gold-btn" onclick="goToPage('classicPage')">Classic</button>
+        <button class="blocky-btn filter-btn blue-btn" onclick="goToPage('miscPage')">Miscellaneous</button>
       </div>
     </div>
     <div class="discord">
       <a href="https://discord.gg/Hngq5zYw3k">Join the Discord for any questions, feedback and info.</a>
+    </div>
+  </div>
+
+  <!-- Miscellaneous Filter Selection Page -->
+  <div id="miscPage" class="page">
+    <button class="blocky-btn back-btn" onclick="goToPage('filterPage')">← Back</button>
+    <button class="blocky-btn help-btn" onclick="goToPage('helpPage')">Help</button>
+    <h1>Miscellaneous Filters</h1>
+    <div class="filter-box">
+      Choose a Filter
+      <div class="filter-options">
+        <button class="blocky-btn filter-btn blue-btn" onclick="goToPage('packlessStrongholdPage')">Packless Stronghold Village</button>
+        <button class="blocky-btn filter-btn orange-btn" onclick="goToPage('villagePage')">Village</button>
+        <button class="blocky-btn filter-btn gold-btn" onclick="goToPage('classicPage')">Classic</button>
+        <button class="blocky-btn filter-btn purple-btn" onclick="goToPage('structurelessPage')">Structureless</button>
+      </div>
     </div>
   </div>
 
@@ -649,7 +686,7 @@
 
   
   <div id="packlessStrongholdPage" class="page">
-    <button class="blocky-btn back-btn" onclick="goToPage('filterPage')">← Back</button>
+    <button class="blocky-btn back-btn" onclick="goToPage('miscPage')">← Back</button>
     <button class="blocky-btn help-btn" onclick="goToPage('helpPage')">Help</button>
     <h1>Bedrock 1.16 FSG Packless Stronghold Village Generator</h1>
     <div class="container">
@@ -700,7 +737,7 @@
 
   
   <div id="villagePage" class="page">
-    <button class="blocky-btn back-btn" onclick="goToPage('filterPage')">← Back</button>
+    <button class="blocky-btn back-btn" onclick="goToPage('miscPage')">← Back</button>
     <button class="blocky-btn help-btn" onclick="goToPage('helpPage')">Help</button>
     <h1>Bedrock 1.16 FSG Village Generator</h1>
     <div class="container">
@@ -715,7 +752,7 @@
 
   
   <div id="classicPage" class="page">
-    <button class="blocky-btn back-btn" onclick="goToPage('filterPage')">← Back</button>
+    <button class="blocky-btn back-btn" onclick="goToPage('miscPage')">← Back</button>
     <button class="blocky-btn help-btn" onclick="goToPage('helpPage')">Help</button>
     <h1>Bedrock 1.16 FSG Classic Generator</h1>
     <div class="container">
@@ -725,6 +762,18 @@
       </div>
       <div class="seed-box" id="classicSeedBox"></div>
       <div class="cooldown" id="classicCooldownMsg"></div>
+    </div>
+  </div>
+
+  <!-- Structureless Generator Page -->
+  <div id="structurelessPage" class="page">
+    <button class="blocky-btn back-btn" onclick="goToPage('miscPage')">← Back</button>
+    <button class="blocky-btn help-btn" onclick="goToPage('helpPage')">Help</button>
+    <h1>Bedrock 1.16 FSG Structureless Generator</h1>
+    <div class="container">
+      <button class="blocky-btn" id="structurelessSeedBtn">Generate Seed</button>
+      <div class="seed-box" id="structurelessSeedBox"></div>
+      <div class="cooldown" id="structurelessCooldownMsg"></div>
     </div>
   </div>
 
@@ -740,6 +789,7 @@ Stronghold Village (packless): same as stronghold village, but doesn't require a
 Ruined Portal: guarantees a very close ruined portal with looting 3 sword, 27 iron nuggets, a flint and steel, 8-9 obsidian and a golden axe and pickaxe (with the pack). There is fastion in nether, and the strongholds are guaranteed to be within 2000 blocks from 0 0, which means that educated travel is guaranteed to be good. <br>
 Village: guarantees a village (not stronghold) + 10 lava blocks rp or mega canyon, fastion in nether, sh within 2k of 0 0. <br>
 Classic: guarantees stronghold village and insta fort, greatly increased pearl rates for classic. <br>
+Structureless: guarantees mega canyon at spawn for enter and iron ore, fastion in nether, sh within 2k form 0 0. <br>
         For any additional info, request and feedback join the discord. Coded by ma_ehy</p>
     </div>
   </div>
@@ -750,6 +800,7 @@ Classic: guarantees stronghold village and insta fort, greatly increased pearl r
   let ruinedPortalSeeds = [];
   let villageSeeds = [];
   let classicSeeds = [];
+  let structurelessSeeds = [];
 
   // Google Apps Script Web App URL for logging
   const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxMxZ9zStBmy6ERJk1ne6_-zH8eOEce5ISf_wcWYmq2tHYhrwKmNSaYZ_LzDYEHQn3mIQ/exec';
@@ -760,46 +811,48 @@ Classic: guarantees stronghold village and insta fort, greatly increased pearl r
     stronghold: { active: false, time: 10 },
     ruinedPortal: { active: false, time: 10 },
     village: { active: false, time: 10 },
-    classic: { active: false, time: 10 }
+    classic: { active: false, time: 10 },
+    structureless: { active: false, time: 10 }
   };
   let intervals = {};
 
   // Function to log seed to Google Sheet
-async function logToGoogleSheet(seed, filterType) {
-  try {
-    const timestamp = new Date().toISOString();
-    const data = {
-      seed: seed,
-      filterType: filterType,
-      timestamp: timestamp,
-      userAgent: navigator.userAgent,
-      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
-    };
+  async function logToGoogleSheet(seed, filterType) {
+    try {
+      const timestamp = new Date().toISOString();
+      const data = {
+        seed: seed,
+        filterType: filterType,
+        timestamp: timestamp,
+        userAgent: navigator.userAgent,
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+      };
 
-    await fetch(GOOGLE_SHEET_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data)
-    });
-    
-    console.log('Seed logged successfully');
-  } catch (error) {
-    console.error('Error logging to Google Sheets:', error);
+      await fetch(GOOGLE_SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+      });
+      
+      console.log('Seed logged successfully');
+    } catch (error) {
+      console.error('Error logging to Google Sheets:', error);
+    }
   }
-}
 
   // Load seeds from JSON
   async function loadSeeds() {
     try {
-      const [packlessStrongholdRes, strongholdRes, ruinedPortalRes, villageRes, classicRes] = await Promise.all([
+      const [packlessStrongholdRes, strongholdRes, ruinedPortalRes, villageRes, classicRes, structurelessRes] = await Promise.all([
         fetch("stronghold.json"),
         fetch("packshvil.json"),
         fetch("ruinedportal.json"),
         fetch("village.json"),
-        fetch("classic.json")
+        fetch("classic.json"),
+        fetch("structureless.json")
       ]);
 
       packlessStrongholdSeeds = await packlessStrongholdRes.json();
@@ -807,39 +860,43 @@ async function logToGoogleSheet(seed, filterType) {
       ruinedPortalSeeds = await ruinedPortalRes.json();
       villageSeeds = await villageRes.json();
       classicSeeds = await classicRes.json();
+      structurelessSeeds = await structurelessRes.json();
 
       document.getElementById("packlessStrongholdSeedBtn").disabled = false;
       document.getElementById("strongholdSeedBtn").disabled = false;
       document.getElementById("ruinedPortalSeedBtn").disabled = false;
       document.getElementById("villageSeedBtn").disabled = false;
       document.getElementById("classicSeedBtn").disabled = false;
+      document.getElementById("structurelessSeedBtn").disabled = false;
     } catch (err) {
       console.error("Error loading seeds:", err);
     }
   }
 
   window.goToPage = function(pageId) {
-    document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-    document.getElementById(pageId).classList.add('active');
+  document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+  document.getElementById(pageId).classList.add('active');
 
-    if (pageId === 'packlessStrongholdPage') {
-      document.body.classList.remove('red-theme', 'gold-theme', 'orange-theme');
-      document.body.classList.add('blue-theme');
-    } else if (pageId === 'ruinedPortalPage') {
-      document.body.classList.remove('blue-theme', 'gold-theme', 'orange-theme');
-      document.body.classList.add('red-theme');
-    } else if (pageId === 'villagePage') {
-      document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme');
-      document.body.classList.add('orange-theme');
-    } else if (pageId === 'classicPage') {
-      document.body.classList.remove('blue-theme', 'red-theme', 'orange-theme');
-      document.body.classList.add('gold-theme');
-    } else {
-      document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'orange-theme');
-    }
-
-    currentPage = pageId;
+  if (pageId === 'packlessStrongholdPage') {
+    document.body.classList.remove('red-theme', 'gold-theme', 'orange-theme', 'purple-theme');
+    document.body.classList.add('blue-theme');
+  } else if (pageId === 'ruinedPortalPage') {
+    document.body.classList.remove('blue-theme', 'gold-theme', 'orange-theme', 'purple-theme');
+    document.body.classList.add('red-theme');
+  } else if (pageId === 'villagePage') {
+    document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'purple-theme');
+    document.body.classList.add('orange-theme');
+  } else if (pageId === 'classicPage') {
+    document.body.classList.remove('blue-theme', 'red-theme', 'orange-theme', 'purple-theme');
+    document.body.classList.add('gold-theme');
+  } else if (pageId === 'structurelessPage') {
+    document.body.classList.remove('blue-theme', 'red-theme', 'orange-theme', 'gold-theme');
+    document.body.classList.add('purple-theme');
+  } else {
+    document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'orange-theme', 'purple-theme');
   }
+  currentPage = pageId;
+}
 
   function getRandomSeed(seedArray) {
     const idx = Math.floor(Math.random() * seedArray.length);
@@ -931,17 +988,30 @@ async function logToGoogleSheet(seed, filterType) {
     }
   });
 
+  // Structureless Generator
+  document.getElementById('structurelessSeedBtn').addEventListener('click', () => {
+    if (!cooldowns.structureless.active && structurelessSeeds.length > 0) {
+      const seedBox = document.getElementById('structurelessSeedBox');
+      const seed = getRandomSeed(structurelessSeeds);
+      seedBox.textContent = seed;
+      seedBox.style.display = 'flex';
+      logToGoogleSheet(seed, 'Structureless');
+      startCooldown('structureless');
+    }
+  });
+
   document.getElementById("packlessStrongholdSeedBtn").disabled = true;
   document.getElementById("strongholdSeedBtn").disabled = true;
   document.getElementById("ruinedPortalSeedBtn").disabled = true;
   document.getElementById("villageSeedBtn").disabled = true;
   document.getElementById("classicSeedBtn").disabled = true;
+  document.getElementById("structurelessSeedBtn").disabled = true;
 
   function setupCopyOnDoubleClick(boxId) {
     const box = document.getElementById(boxId);
     box.addEventListener('dblclick', () => {
       const seed = box.textContent.trim();
-      if (seed !== "") {
+      if (seed !== "" && seed !== "Seed copied!") {
         navigator.clipboard.writeText(seed).then(() => {
           box.textContent = "Seed copied!";
           setTimeout(() => {
@@ -959,6 +1029,7 @@ async function logToGoogleSheet(seed, filterType) {
   setupCopyOnDoubleClick('ruinedPortalSeedBox');
   setupCopyOnDoubleClick('villageSeedBox');
   setupCopyOnDoubleClick('classicSeedBox');
+  setupCopyOnDoubleClick('structurelessSeedBox');
 
   loadSeeds();
 
