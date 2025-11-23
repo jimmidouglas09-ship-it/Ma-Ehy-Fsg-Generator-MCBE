@@ -736,11 +736,14 @@ body.bronze-theme {
 <body>
 
   
+</head>
+<body>
+
+  
  <!-- Main Filter Selection Page -->
 
 
   <div id="filterPage" class="page active">
-    <button class="blocky-btn help-btn" onclick="goToPage('helpPage')">Help</button>
     <h1>Bedrock 1.16 FSG Generator</h1>
     <div class="filter-box">
       Choose a Filter
@@ -750,6 +753,9 @@ body.bronze-theme {
         <button class="blocky-btn filter-btn bronze-btn" onclick="goToPage('miscPage')">Miscellaneous</button>
         <button class="blocky-btn filter-btn dark-blue-btn" onclick="goToPage('rankedMainPage')">Ranked</button>
       </div>
+      <div class="navigation-buttons">
+        <button class="blocky-btn help-btn" onclick="goToPage('helpPage')">Help</button>
+      </div>
     </div>
     <div class="discord">
       <a href="https://discord.gg/Hngq5zYw3k">Join the Discord for any questions, feedback and info.</a>
@@ -758,8 +764,6 @@ body.bronze-theme {
 
   <!-- Miscellaneous Filter Selection Page -->
   <div id="miscPage" class="page">
-    <button class="blocky-btn back-btn" onclick="goToPage('filterPage')">← Back</button>
-    <button class="blocky-btn help-btn" onclick="goToPage('helpPage')">Help</button>
     <h1>Miscellaneous Filters</h1>
     <div class="filter-box">
       Choose a Filter
@@ -769,6 +773,10 @@ body.bronze-theme {
         <button class="blocky-btn filter-btn gold-btn" onclick="goToPage('classicPage')">Classic</button>
         <button class="blocky-btn filter-btn purple-btn" onclick="goToPage('structurelessPage')">Structureless</button>
       </div>
+      <div class="navigation-buttons">
+        <button class="blocky-btn back-btn" onclick="goToPage('filterPage')">← Back</button>
+        <button class="blocky-btn help-btn" onclick="goToPage('helpPage')">Help</button>
+      </div>
     </div>
   </div>
 
@@ -777,13 +785,15 @@ body.bronze-theme {
 
   
   <div id="packlessStrongholdPage" class="page">
-    <button class="blocky-btn back-btn" onclick="goToPage('miscPage')">← Back</button>
-    <button class="blocky-btn help-btn" onclick="goToPage('helpPage')">Help</button>
     <h1>Bedrock 1.16 FSG Packless Stronghold Village Generator</h1>
     <div class="container">
       <button class="blocky-btn" id="packlessStrongholdSeedBtn">Generate Seed</button>
       <div class="seed-box" id="packlessStrongholdSeedBox"></div>
       <div class="cooldown" id="packlessStrongholdCooldownMsg"></div>
+      <div class="navigation-buttons">
+        <button class="blocky-btn back-btn" onclick="goToPage('miscPage')">← Back</button>
+        <button class="blocky-btn help-btn" onclick="goToPage('helpPage')">Help</button>
+      </div>
     </div>
   </div>
 
@@ -792,8 +802,6 @@ body.bronze-theme {
 
   
   <div id="strongholdPage" class="page">
-    <button class="blocky-btn back-btn" onclick="goToPage('filterPage')">← Back</button>
-    <button class="blocky-btn help-btn" onclick="goToPage('helpPage')">Help</button>
     <h1>Bedrock 1.16 FSG Stronghold Village Generator</h1>
     <div class="container">
       <button class="blocky-btn" id="strongholdSeedBtn">Generate Seed</button>
@@ -802,6 +810,10 @@ body.bronze-theme {
       </div>
       <div class="seed-box" id="strongholdSeedBox"></div>
       <div class="cooldown" id="strongholdCooldownMsg"></div>
+      <div class="navigation-buttons">
+        <button class="blocky-btn back-btn" onclick="goToPage('filterPage')">← Back</button>
+        <button class="blocky-btn help-btn" onclick="goToPage('helpPage')">Help</button>
+      </div>
     </div>
   </div>
 
@@ -810,8 +822,6 @@ body.bronze-theme {
 
   
   <div id="ruinedPortalPage" class="page">
-    <button class="blocky-btn back-btn" onclick="goToPage('filterPage')">← Back</button>
-    <button class="blocky-btn help-btn" onclick="goToPage('helpPage')">Help</button>
     <h1>Bedrock 1.16 FSG Ruined Portal Generator</h1>
     <div class="container">
       <button class="blocky-btn" id="ruinedPortalSeedBtn">Generate Seed</button>
@@ -820,6 +830,10 @@ body.bronze-theme {
       </div>
       <div class="seed-box" id="ruinedPortalSeedBox"></div>
       <div class="cooldown" id="ruinedPortalCooldownMsg"></div>
+      <div class="navigation-buttons">
+        <button class="blocky-btn back-btn" onclick="goToPage('filterPage')">← Back</button>
+        <button class="blocky-btn help-btn" onclick="goToPage('helpPage')">Help</button>
+      </div>
     </div>
   </div>
 
@@ -828,13 +842,15 @@ body.bronze-theme {
 
   
   <div id="villagePage" class="page">
-    <button class="blocky-btn back-btn" onclick="goToPage('miscPage')">← Back</button>
-    <button class="blocky-btn help-btn" onclick="goToPage('helpPage')">Help</button>
     <h1>Bedrock 1.16 FSG Village Generator</h1>
     <div class="container">
       <button class="blocky-btn" id="villageSeedBtn">Generate Seed</button>
       <div class="seed-box" id="villageSeedBox"></div>
       <div class="cooldown" id="villageCooldownMsg"></div>
+      <div class="navigation-buttons">
+        <button class="blocky-btn back-btn" onclick="goToPage('miscPage')">← Back</button>
+        <button class="blocky-btn help-btn" onclick="goToPage('helpPage')">Help</button>
+      </div>
     </div>
   </div>
 
@@ -843,8 +859,6 @@ body.bronze-theme {
 
   
   <div id="classicPage" class="page">
-    <button class="blocky-btn back-btn" onclick="goToPage('miscPage')">← Back</button>
-    <button class="blocky-btn help-btn" onclick="goToPage('helpPage')">Help</button>
     <h1>Bedrock 1.16 FSG Classic Generator</h1>
     <div class="container">
       <button class="blocky-btn" id="classicSeedBtn">Generate Seed</button>
@@ -853,24 +867,29 @@ body.bronze-theme {
       </div>
       <div class="seed-box" id="classicSeedBox"></div>
       <div class="cooldown" id="classicCooldownMsg"></div>
+      <div class="navigation-buttons">
+        <button class="blocky-btn back-btn" onclick="goToPage('miscPage')">← Back</button>
+        <button class="blocky-btn help-btn" onclick="goToPage('helpPage')">Help</button>
+      </div>
     </div>
   </div>
 
   <!-- Structureless Generator Page -->
   <div id="structurelessPage" class="page">
-    <button class="blocky-btn back-btn" onclick="goToPage('miscPage')">← Back</button>
-    <button class="blocky-btn help-btn" onclick="goToPage('helpPage')">Help</button>
     <h1>Bedrock 1.16 FSG Structureless Generator</h1>
     <div class="container">
       <button class="blocky-btn" id="structurelessSeedBtn">Generate Seed</button>
       <div class="seed-box" id="structurelessSeedBox"></div>
       <div class="cooldown" id="structurelessCooldownMsg"></div>
+      <div class="navigation-buttons">
+        <button class="blocky-btn back-btn" onclick="goToPage('miscPage')">← Back</button>
+        <button class="blocky-btn help-btn" onclick="goToPage('helpPage')">Help</button>
+      </div>
     </div>
   </div>
 
   <!-- Help Page -->
   <div id="helpPage" class="page">
-    <button class="blocky-btn back-btn" onclick="goToPage('filterPage')">← Back</button>
     <h1>Help</h1>
     <div class="help-content">
       <p>This generator will guarantee very good seeds to practice.
@@ -882,13 +901,14 @@ Village: guarantees a village (not stronghold) + 10 lava blocks rp or mega canyo
 Classic: guarantees stronghold village and insta fort, greatly increased pearl rates for classic. <br>
 Structureless: guarantees mega canyon at spawn for enter and iron ore, fastion in nether, sh within 2k form 0 0. <br>
         For any additional info, request and feedback join the discord. Coded by ma_ehy</p>
+      <div class="navigation-buttons">
+        <button class="blocky-btn back-btn" onclick="goToPage('filterPage')">← Back</button>
+      </div>
     </div>
   </div>
 
 <!-- Ranked Main Page -->
 <div id="rankedMainPage" class="page">
-  <button class="blocky-btn back-btn" onclick="goToPage('filterPage')">← Back</button>
-  <button class="blocky-btn help-btn" onclick="goToPage('rankedHelpPage')">Help</button>
   <h1>Ranked Mode</h1>
   <div class="filter-box">
     Choose a Filter
@@ -900,51 +920,63 @@ Structureless: guarantees mega canyon at spawn for enter and iron ore, fastion i
     <div class="download-box" style="margin-top: 30px;">
       <a href="ranked-addon.mcaddon" download class="blocky-btn filter-btn" style="background: linear-gradient(45deg, var(--minecraft-green), var(--minecraft-dark-green)); border-color: var(--minecraft-dark-green);">Download Ranked Add-on</a>
     </div>
+    <div class="navigation-buttons">
+      <button class="blocky-btn back-btn" onclick="goToPage('filterPage')">← Back</button>
+      <button class="blocky-btn help-btn" onclick="goToPage('rankedHelpPage')">Help</button>
+    </div>
   </div>
 </div>
 
 <!-- Ranked Ruined Portal Generator Page -->
 <div id="rankedRuinedPortalPage" class="page">
-  <button class="blocky-btn back-btn" onclick="goToPage('rankedMainPage')">← Back</button>
-  <button class="blocky-btn help-btn" onclick="goToPage('rankedHelpPage')">Help</button>
   <h1>Ranked Ruined Portal Generator</h1>
   <div class="container">
     <button class="blocky-btn" id="rankedRuinedPortalSeedBtn">Generate Seed</button>
     <div class="seed-box" id="rankedRuinedPortalSeedBox"></div>
     <div class="cooldown" id="rankedRuinedPortalCooldownMsg"></div>
+    <div class="navigation-buttons">
+      <button class="blocky-btn back-btn" onclick="goToPage('rankedMainPage')">← Back</button>
+      <button class="blocky-btn help-btn" onclick="goToPage('rankedHelpPage')">Help</button>
+    </div>
   </div>
 </div>
 
 <!-- Ranked Stronghold Village Generator Page -->
 <div id="rankedStrongholdPage" class="page">
-  <button class="blocky-btn back-btn" onclick="goToPage('rankedMainPage')">← Back</button>
-  <button class="blocky-btn help-btn" onclick="goToPage('rankedHelpPage')">Help</button>
   <h1>Ranked Stronghold Village Generator</h1>
   <div class="container">
     <button class="blocky-btn" id="rankedStrongholdSeedBtn">Generate Seed</button>
     <div class="seed-box" id="rankedStrongholdSeedBox"></div>
     <div class="cooldown" id="rankedStrongholdCooldownMsg"></div>
+    <div class="navigation-buttons">
+      <button class="blocky-btn back-btn" onclick="goToPage('rankedMainPage')">← Back</button>
+      <button class="blocky-btn help-btn" onclick="goToPage('rankedHelpPage')">Help</button>
+    </div>
   </div>
 </div>
 
 <!-- Ranked Village Generator Page -->
 <div id="rankedVillagePage" class="page">
-  <button class="blocky-btn back-btn" onclick="goToPage('rankedMainPage')">← Back</button>
-  <button class="blocky-btn help-btn" onclick="goToPage('rankedHelpPage')">Help</button>
   <h1>Ranked Village Generator</h1>
   <div class="container">
     <button class="blocky-btn" id="rankedVillageSeedBtn">Generate Seed</button>
     <div class="seed-box" id="rankedVillageSeedBox"></div>
     <div class="cooldown" id="rankedVillageCooldownMsg"></div>
+    <div class="navigation-buttons">
+      <button class="blocky-btn back-btn" onclick="goToPage('rankedMainPage')">← Back</button>
+      <button class="blocky-btn help-btn" onclick="goToPage('rankedHelpPage')">Help</button>
+    </div>
   </div>
 </div>
 
 <!-- Ranked Help Page -->
 <div id="rankedHelpPage" class="page">
-  <button class="blocky-btn back-btn" onclick="goToPage('rankedMainPage')">← Back</button>
   <h1>Ranked Help</h1>
   <div class="help-content">
-    <p>[Placeholder text - fill this in later with your ranked mode information]</p>
+    <p>Ranked seeds are like fsg, but filtered to be even better in quality and stricter in where the structures generates. The addon will also grant extremely enhanced rng, and - for the ruined portal behavior pack within the addon - will force certain structures to always generate at specific locations. For more information about ranked and the addon, join the discord server.</p>
+    <div class="navigation-buttons">
+      <button class="blocky-btn back-btn" onclick="goToPage('rankedMainPage')">← Back</button>
+    </div>
   </div>
 </div>
 
