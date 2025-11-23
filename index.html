@@ -96,9 +96,9 @@ body.silver-theme {
 
 body.bronze-theme {
   background: linear-gradient(135deg, 
-    #CD7F32 0%, 
-    #B8860B 50%, 
-    #8B6914 100%);
+    #fbff1f 0%, 
+    #e8eb0f 50%, 
+    #d4d700 100%);
 }
     
     body::before {
@@ -369,19 +369,19 @@ body.bronze-theme {
 
 .bronze-btn {
   background: linear-gradient(45deg, 
-    #CD7F32, 
-    #8B6914);
-  border-color: #8B6914;
+    #fbff1f, 
+    #d4d700);
+  border-color: #d4d700;
 }
 
 .bronze-btn:hover:not([disabled]) {
   background: linear-gradient(45deg, 
-    #8B6914, 
-    #CD7F32);
+    #d4d700, 
+    #fbff1f);
 }
 
 .bronze-btn:active:not([disabled]) {
-  background: #8B6914;
+  background: #d4d700;
 }
     
     .filter-box {
@@ -868,27 +868,11 @@ Structureless: guarantees mega canyon at spawn for enter and iron ore, fastion i
     </div>
   </div>
 
-  <!-- Ranked Main Page -->
+<!-- Ranked Main Page -->
 <div id="rankedMainPage" class="page">
   <button class="blocky-btn back-btn" onclick="goToPage('filterPage')">← Back</button>
   <button class="blocky-btn help-btn" onclick="goToPage('rankedHelpPage')">Help</button>
   <h1>Ranked Mode</h1>
-  <div class="filter-box">
-    Choose an Option
-    <div class="filter-options">
-      <button class="blocky-btn filter-btn silver-btn" onclick="goToPage('ranked116Page')">1.16</button>
-      <div class="download-box">
-        <a href="ranked-addon.mcaddon" download class="blocky-btn filter-btn" style="background: linear-gradient(45deg, var(--minecraft-green), var(--minecraft-dark-green)); border-color: var(--minecraft-dark-green);">Download Ranked Add-on</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Ranked 1.16 Filter Selection Page -->
-<div id="ranked116Page" class="page">
-  <button class="blocky-btn back-btn" onclick="goToPage('rankedMainPage')">← Back</button>
-  <button class="blocky-btn help-btn" onclick="goToPage('rankedHelpPage')">Help</button>
-  <h1>Ranked 1.16 Filters</h1>
   <div class="filter-box">
     Choose a Filter
     <div class="filter-options">
@@ -896,12 +880,15 @@ Structureless: guarantees mega canyon at spawn for enter and iron ore, fastion i
       <button class="blocky-btn filter-btn" onclick="goToPage('rankedStrongholdPage')">Ranked Stronghold Village</button>
       <button class="blocky-btn filter-btn orange-btn" onclick="goToPage('rankedVillagePage')">Ranked Village</button>
     </div>
+    <div class="download-box" style="margin-top: 30px;">
+      <a href="ranked-addon.mcaddon" download class="blocky-btn filter-btn" style="background: linear-gradient(45deg, var(--minecraft-green), var(--minecraft-dark-green)); border-color: var(--minecraft-dark-green);">Download Ranked Add-on</a>
+    </div>
   </div>
 </div>
 
 <!-- Ranked Ruined Portal Generator Page -->
 <div id="rankedRuinedPortalPage" class="page">
-  <button class="blocky-btn back-btn" onclick="goToPage('ranked116Page')">← Back</button>
+  <button class="blocky-btn back-btn" onclick="goToPage('rankedMainPage')">← Back</button>
   <button class="blocky-btn help-btn" onclick="goToPage('rankedHelpPage')">Help</button>
   <h1>Ranked Ruined Portal Generator</h1>
   <div class="container">
@@ -913,7 +900,7 @@ Structureless: guarantees mega canyon at spawn for enter and iron ore, fastion i
 
 <!-- Ranked Stronghold Village Generator Page -->
 <div id="rankedStrongholdPage" class="page">
-  <button class="blocky-btn back-btn" onclick="goToPage('ranked116Page')">← Back</button>
+  <button class="blocky-btn back-btn" onclick="goToPage('rankedMainPage')">← Back</button>
   <button class="blocky-btn help-btn" onclick="goToPage('rankedHelpPage')">Help</button>
   <h1>Ranked Stronghold Village Generator</h1>
   <div class="container">
@@ -925,7 +912,7 @@ Structureless: guarantees mega canyon at spawn for enter and iron ore, fastion i
 
 <!-- Ranked Village Generator Page -->
 <div id="rankedVillagePage" class="page">
-  <button class="blocky-btn back-btn" onclick="goToPage('ranked116Page')">← Back</button>
+  <button class="blocky-btn back-btn" onclick="goToPage('rankedMainPage')">← Back</button>
   <button class="blocky-btn help-btn" onclick="goToPage('rankedHelpPage')">Help</button>
   <h1>Ranked Village Generator</h1>
   <div class="container">
@@ -1043,37 +1030,34 @@ Structureless: guarantees mega canyon at spawn for enter and iron ore, fastion i
   document.getElementById(pageId).classList.add('active');
 
   if (pageId === 'packlessStrongholdPage') {
-    document.body.classList.remove('red-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
+    document.body.classList.remove('red-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme', 'bronze-theme');
     document.body.classList.add('blue-theme');
   } else if (pageId === 'ruinedPortalPage') {
-    document.body.classList.remove('blue-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
+    document.body.classList.remove('blue-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme', 'bronze-theme');
     document.body.classList.add('red-theme');
   } else if (pageId === 'villagePage') {
-    document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
+    document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme', 'bronze-theme');
     document.body.classList.add('orange-theme');
   } else if (pageId === 'classicPage') {
-    document.body.classList.remove('blue-theme', 'red-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
+    document.body.classList.remove('blue-theme', 'red-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme', 'bronze-theme');
     document.body.classList.add('gold-theme');
   } else if (pageId === 'structurelessPage') {
-    document.body.classList.remove('blue-theme', 'red-theme', 'orange-theme', 'gold-theme', 'dark-blue-theme', 'silver-theme');
+    document.body.classList.remove('blue-theme', 'red-theme', 'orange-theme', 'gold-theme', 'dark-blue-theme', 'silver-theme', 'bronze-theme');
     document.body.classList.add('purple-theme');
   } else if (pageId === 'miscPage') {
     document.body.classList.remove('blue-theme', 'red-theme', 'orange-theme', 'gold-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
     document.body.classList.add('bronze-theme');
   } else if (pageId === 'rankedMainPage' || pageId === 'rankedHelpPage') {
-    document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'silver-theme');
+    document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'silver-theme', 'bronze-theme');
     document.body.classList.add('dark-blue-theme');
-  } else if (pageId === 'ranked116Page') {
-    document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme');
-    document.body.classList.add('silver-theme');
   } else if (pageId === 'rankedRuinedPortalPage') {
-    document.body.classList.remove('blue-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
+    document.body.classList.remove('blue-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme', 'bronze-theme');
     document.body.classList.add('red-theme');
   } else if (pageId === 'rankedStrongholdPage') {
-    document.body.classList.remove('red-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
+    document.body.classList.remove('red-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme', 'bronze-theme');
     document.body.classList.add('blue-theme');
   } else if (pageId === 'rankedVillagePage') {
-    document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
+    document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme', 'bronze-theme');
     document.body.classList.add('orange-theme');
   } else {
     document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme', 'bronze-theme');
@@ -1081,7 +1065,7 @@ Structureless: guarantees mega canyon at spawn for enter and iron ore, fastion i
   
   currentPage = pageId;
 }
-
+  
   function getRandomSeed(seedArray) {
     const idx = Math.floor(Math.random() * seedArray.length);
     return seedArray[idx];
