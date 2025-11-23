@@ -93,7 +93,14 @@ body.silver-theme {
     #BDBDBD 50%, 
     #757575 100%);
 }
-  
+
+body.bronze-theme {
+  background: linear-gradient(135deg, 
+    #CD7F32 0%, 
+    #B8860B 50%, 
+    #8B6914 100%);
+}
+    
     body::before {
       content: '';
       position: fixed;
@@ -358,6 +365,23 @@ body.silver-theme {
 
 .silver-btn:active:not([disabled]) {
   background: #757575;
+}
+
+.bronze-btn {
+  background: linear-gradient(45deg, 
+    #CD7F32, 
+    #8B6914);
+  border-color: #8B6914;
+}
+
+.bronze-btn:hover:not([disabled]) {
+  background: linear-gradient(45deg, 
+    #8B6914, 
+    #CD7F32);
+}
+
+.bronze-btn:active:not([disabled]) {
+  background: #8B6914;
 }
     
     .filter-box {
@@ -706,7 +730,7 @@ body.silver-theme {
       <div class="filter-options">
         <button class="blocky-btn filter-btn" onclick="goToPage('strongholdPage')">Stronghold Village</button>
         <button class="blocky-btn filter-btn red-btn" onclick="goToPage('ruinedPortalPage')">Ruined Portal</button>
-        <button class="blocky-btn filter-btn blue-btn" onclick="goToPage('miscPage')">Miscellaneous</button>
+        <button class="blocky-btn filter-btn bronze-btn" onclick="goToPage('miscPage')">Miscellaneous</button>
         <button class="blocky-btn filter-btn dark-blue-btn" onclick="goToPage('rankedMainPage')">Ranked</button>
       </div>
     </div>
@@ -1033,6 +1057,9 @@ Structureless: guarantees mega canyon at spawn for enter and iron ore, fastion i
   } else if (pageId === 'structurelessPage') {
     document.body.classList.remove('blue-theme', 'red-theme', 'orange-theme', 'gold-theme', 'dark-blue-theme', 'silver-theme');
     document.body.classList.add('purple-theme');
+  } else if (pageId === 'miscPage') {
+    document.body.classList.remove('blue-theme', 'red-theme', 'orange-theme', 'gold-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
+    document.body.classList.add('bronze-theme');
   } else if (pageId === 'rankedMainPage' || pageId === 'rankedHelpPage') {
     document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'silver-theme');
     document.body.classList.add('dark-blue-theme');
@@ -1049,7 +1076,7 @@ Structureless: guarantees mega canyon at spawn for enter and iron ore, fastion i
     document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
     document.body.classList.add('orange-theme');
   } else {
-    document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
+    document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme', 'bronze-theme');
   }
   
   currentPage = pageId;
