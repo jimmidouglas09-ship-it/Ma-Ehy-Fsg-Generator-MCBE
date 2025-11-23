@@ -55,6 +55,16 @@
       display: none;
     }
 
+    html {
+      overflow-y: auto;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    html::-webkit-scrollbar {
+      display: none;
+    }
+
     body.red-theme {
       background: linear-gradient(135deg, 
         var(--minecraft-red) 0%, 
