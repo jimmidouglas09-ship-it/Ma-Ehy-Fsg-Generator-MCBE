@@ -1019,37 +1019,39 @@ Structureless: guarantees mega canyon at spawn for enter and iron ore, fastion i
   document.getElementById(pageId).classList.add('active');
 
   if (pageId === 'packlessStrongholdPage') {
-    document.body.classList.remove('red-theme', 'gold-theme', 'orange-theme', 'purple-theme');
+    document.body.classList.remove('red-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
     document.body.classList.add('blue-theme');
   } else if (pageId === 'ruinedPortalPage') {
-    document.body.classList.remove('blue-theme', 'gold-theme', 'orange-theme', 'purple-theme');
+    document.body.classList.remove('blue-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
     document.body.classList.add('red-theme');
   } else if (pageId === 'villagePage') {
-    document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'purple-theme');
+    document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
     document.body.classList.add('orange-theme');
   } else if (pageId === 'classicPage') {
-    document.body.classList.remove('blue-theme', 'red-theme', 'orange-theme', 'purple-theme');
+    document.body.classList.remove('blue-theme', 'red-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
     document.body.classList.add('gold-theme');
   } else if (pageId === 'structurelessPage') {
-    document.body.classList.remove('blue-theme', 'red-theme', 'orange-theme', 'gold-theme');
+    document.body.classList.remove('blue-theme', 'red-theme', 'orange-theme', 'gold-theme', 'dark-blue-theme', 'silver-theme');
     document.body.classList.add('purple-theme');
-    } else if (pageId === 'rankedMainPage' || pageId === 'rankedHelpPage') {
-  document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'silver-theme');
-  document.body.classList.add('dark-blue-theme');
-} else if (pageId === 'ranked116Page') {
-  document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme');
-  document.body.classList.add('silver-theme');
-} else if (pageId === 'rankedRuinedPortalPage') {
-  document.body.classList.remove('blue-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
-  document.body.classList.add('red-theme');
-} else if (pageId === 'rankedStrongholdPage') {
-  document.body.classList.remove('red-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
-  document.body.classList.add('blue-theme');
-} else if (pageId === 'rankedVillagePage') {
-  document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
-  document.body.classList.add('orange-theme');
+  } else if (pageId === 'rankedMainPage' || pageId === 'rankedHelpPage') {
+    document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'silver-theme');
+    document.body.classList.add('dark-blue-theme');
+  } else if (pageId === 'ranked116Page') {
+    document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme');
+    document.body.classList.add('silver-theme');
+  } else if (pageId === 'rankedRuinedPortalPage') {
+    document.body.classList.remove('blue-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
+    document.body.classList.add('red-theme');
+  } else if (pageId === 'rankedStrongholdPage') {
+    document.body.classList.remove('red-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
+    document.body.classList.add('blue-theme');
+  } else if (pageId === 'rankedVillagePage') {
+    document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
+    document.body.classList.add('orange-theme');
   } else {
-  document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
+    document.body.classList.remove('blue-theme', 'red-theme', 'gold-theme', 'orange-theme', 'purple-theme', 'dark-blue-theme', 'silver-theme');
+  }
+  
   currentPage = pageId;
 }
 
